@@ -14,7 +14,7 @@ class _SplashPageState extends State<SplashPage> {
   Widget build(BuildContext context) {
     return EasySplashScreen(
       logo: Image.asset("assets/Galaxy_logo.png"),
-      logoWidth: 100,
+      logoWidth: 150,
       backgroundImage: AssetImage("assets/bg.png"),
       showLoader: true,
       navigator: MainPage(),

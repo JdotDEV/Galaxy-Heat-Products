@@ -60,8 +60,8 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                   Lottie.asset('assets/wave.json'),
                   SizedBox(height: 35),
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 85),
-                    child: Image.asset('assets/json_codex.png'),
+                    padding: EdgeInsets.symmetric(horizontal: 65),
+                    child: Image.asset('assets/Galaxy_logo.png'),
                   ),
                   SizedBox(height: 50),
                   Text(

@@ -36,7 +36,7 @@ class HomePage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                "LOGGED IN AS: " + user.email!,
+                "Logged in as: " + user.email!,
                 style: TextStyle(fontSize: 20),
               ),
             ],
@@ -81,7 +81,7 @@ class HomePage extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => Get_quote(),
+                      builder: (context) => WebViewStack(),
                     ),
                   );
                 },
@@ -91,7 +91,7 @@ class HomePage extends StatelessWidget {
                     bottom: 10,
                   ),
                   child: Text(
-                    "GET QUOTE",
+                    "Enquiry Form",
                     style: GoogleFonts.poppins(
                       color: Colors.white,
                       fontSize: 16,
