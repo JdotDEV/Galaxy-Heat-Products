@@ -33,7 +33,7 @@ class _Get_quoteState extends State<Get_quote> {
           },
         ),
       )
-      ..loadRequest(Uri.parse('https://galaxyheaters.com/quote/'));
+      ..loadRequest(Uri.parse('https://docs.google.com/forms/d/e/1FAIpQLSe-RJ9YulieWPwMEMVeDrk6WmOz9qMZqURZqEhgVDjZsIS4Ww/viewform'));
   }
 
   @override
