@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 //import 'package:flutter_application_2312_login_fire/pages/login.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_application_2312_login_fire/auth/main_page.dart';
+import 'package:flutter_application_2312_login_fire/pages/Splashscreen.dart';
 import 'package:flutter_application_2312_login_fire/pages/phone.dart';
 import 'firebase_options.dart';
 
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MainPage(),
+      home: SplashPage(),
       //home: MyPhone(),
     );
   }

@@ -1,3 +1,5 @@
+// ignore_for_file: camel_case_types
+
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
@@ -33,7 +35,8 @@ class _Get_quoteState extends State<Get_quote> {
           },
         ),
       )
-      ..loadRequest(Uri.parse('https://docs.google.com/forms/d/e/1FAIpQLSe-RJ9YulieWPwMEMVeDrk6WmOz9qMZqURZqEhgVDjZsIS4Ww/viewform'));
+      ..loadRequest(Uri.parse(
+          'https://docs.google.com/forms/d/e/1FAIpQLSe-RJ9YulieWPwMEMVeDrk6WmOz9qMZqURZqEhgVDjZsIS4Ww/viewform'));
   }
 
   @override
@@ -41,7 +44,7 @@ class _Get_quoteState extends State<Get_quote> {
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.grey[900],
-          title: Text("Get Quote"),
+          title: const Text("Get Quote"),
         ),
         body: WebViewWidget(controller: _controller!));
   }
