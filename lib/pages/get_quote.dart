@@ -1,55 +1,52 @@
+// ignore_for_file: camel_case_types
+
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-class WebViewStack extends StatefulWidget {
-  const WebViewStack({super.key});
+class Get_quote extends StatefulWidget {
+  const Get_quote({super.key});
 
   @override
-  State<WebViewStack> createState() => _WebViewStackState();
+  State<Get_quote> createState() => _Get_quoteState();
 }
 
-class _WebViewStackState extends State<WebViewStack> {
-  var loadingPercentage = 0;
-  late final WebViewController controller;
+class _Get_quoteState extends State<Get_quote> {
+  WebViewController? _controller;
 
   @override
   void initState() {
     super.initState();
-    controller = WebViewController()
-      ..setNavigationDelegate(NavigationDelegate(
-        onPageStarted: (url) {
-          setState(() {
-            loadingPercentage = 0;
-          });
-        },
-        onProgress: (progress) {
-          setState(() {
-            loadingPercentage = progress;
-          });
-        },
-        onPageFinished: (url) {
-          setState(() {
-            loadingPercentage = 100;
-          });
-        },
-      ))
-      ..loadRequest(
-        Uri.parse('https://docs.google.com/forms/d/e/1FAIpQLSe-RJ9YulieWPwMEMVeDrk6WmOz9qMZqURZqEhgVDjZsIS4Ww/viewform'),
-      );
+    _controller = WebViewController()
+      ..setJavaScriptMode(JavaScriptMode.unrestricted)
+      ..setBackgroundColor(const Color(0x00000000))
+      ..setNavigationDelegate(
+        NavigationDelegate(
+          onProgress: (int progress) {
+            // Update loading bar.
+          },
+          onPageStarted: (String url) {},
+          onPageFinished: (String url) {},
+          onWebResourceError: (WebResourceError error) {},
+          onNavigationRequest: (NavigationRequest request) {
+            if (request.url.startsWith('https://www.youtube.com/')) {
+              return NavigationDecision.prevent;
+            }
+            return NavigationDecision.navigate;
+          },
+        ),
+      )
+      ..loadRequest(Uri.parse(
+          'https://docs.google.com/forms/d/e/1FAIpQLSe-RJ9YulieWPwMEMVeDrk6WmOz9qMZqURZqEhgVDjZsIS4Ww/viewform'));
   }
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        WebViewWidget(
-          controller: controller,
-        ),
-        if (loadingPercentage < 100)
-          LinearProgressIndicator(
-            value: loadingPercentage / 100.0,
-          ),
-      ],
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.grey[900],
+        title: const Text("Enquiry Form"),
+      ),
+      body: WebViewWidget(controller: _controller!),
     );
   }
 }
