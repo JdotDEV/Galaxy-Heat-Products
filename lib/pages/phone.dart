@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2312_login_fire/pages/otp.dart';
 
@@ -13,7 +15,6 @@ class _MyPhoneState extends State<MyPhone> {
 
   @override
   void initState() {
-    // TODO: implement initState
     countryController.text = "+91";
     super.initState();
   }

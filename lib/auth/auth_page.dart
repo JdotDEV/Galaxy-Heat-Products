@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import
+
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2312_login_fire/pages/login_page.dart';
 import 'package:flutter_application_2312_login_fire/pages/register_page.dart';

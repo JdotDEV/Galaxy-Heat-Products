@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, unused_local_variable, avoid_print
+
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2312_login_fire/pages/home_page.dart';
 import 'package:pinput/pinput.dart';

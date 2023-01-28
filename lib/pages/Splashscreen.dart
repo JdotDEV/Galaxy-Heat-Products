@@ -1,3 +1,5 @@
+// ignore_for_file: file_names, prefer_const_constructors_in_immutables, library_private_types_in_public_api, prefer_const_constructors
+
 import 'package:easy_splash_screen/easy_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2312_login_fire/auth/main_page.dart';
